@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
-
+import'./Header.css';
 // Importa todas as imagens da pasta
 const images = import.meta.glob("/src/img/*", { eager: true });
 
