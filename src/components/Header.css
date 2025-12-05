@@ -1,0 +1,223 @@
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.header {
+width: 100%;
+padding: 0 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #0a0a0a;
+color: #ffffff;
+overflow: hidden;  /* Evita estouro horizontal */
+box-sizing: border-box;
+
+}
+
+/* Área da logo + nome */
+.header-left {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+/* Controle da logo */
+.header-logo {
+width: 48px;
+height: auto;
+object-fit: contain;
+}
+
+/* Nome do site */
+.header-title {
+font-size: 1.4rem;
+font-weight: 600;
+white-space: nowrap;  /* Evita quebrar o nome SkyNet */
+}
+
+/* Navbar normal */
+.navbar {
+display: flex;
+align-items: center;
+gap: 28px;
+
+}
+
+.navbar a {
+color: #ffffff;
+text-decoration: none;
+font-size: 1rem;
+font-weight: 500;
+white-space: nowrap;
+}
+
+/* =========================
+RESPONSIVIDADE
+========================= */
+@media (max-width: 800px) {
+.navbar {
+gap: 10px;
+
+}
+
+.header-logo {
+width: 42px;
+}
+
+.header-title {
+font-size: 1.2rem;
+}
+}
+
+
+/* HEADER GERAL */
+
+
+/* LOGO + TEXTO */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #ff2c2c);
+}
+
+.logo-text {
+  font-size: 30px;
+  font-weight: 900;
+  color: #ff2c2c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* MENU DESKTOP */
+.menu {
+  display: flex;
+  gap: 28px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.menu a:hover {
+  color: #ff2c2c;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 32px;
+  
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    background: #111;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    gap: 20px;
+    border-left: 2px solid #ff2c2c;
+    border-bottom: 2px solid #ff2c2c;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    
+    display: block;
+  }
+}
+/* ---------- Header base (garante stacking order) ---------- */
+.header {
+  position: fixed;        /* fixa no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;           /* ajuste se necessário */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(10,10,10,1);
+  z-index: 1100;          /* acima do conteúdo normal */
+}
+
+/* menu desktop */
+.menu {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+/* hamburger (mostrado apenas em mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 32px;
+  color: #fff;
+}
+
+/* ---------- MOBILE: Menu vertical, sem fundo e VISÍVEL SOBRE O HERO ---------- */
+@media (max-width: 800px) {
+  /* por padrão escondido */
+  .menu {
+    display: none;
+  }
+
+  /* quando ativo: garante posicionamento sobre o conteúdo */
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-end;
+
+    /* posição e alinhamento */
+    position: fixed;             /* fixa na viewport, garante visibilidade */
+    top: 1px;                   /* logo abaixo do header (use a mesma altura do header) */
+    right: 16px;                 /* distância da direita */
+    z-index: 1200;               /* muito acima do header/hero */
+
+    /* aparência: transparente (usa fundo do header por baixo) */
+    background: rgba(0,0,0,0.7);
+    padding: 10px 16px;         /* espaçamento interno */
+    width: auto;  
+    height: auto; 
+    margin-right: -20px;              /* largura automática, sem caixa pesada */
+    pointer-events: auto;        /* garante que links recebam clique */
+  }
+
+  /* agora mostra o ícone */
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Se o hero tiver z-index alto por engano, force-o pra trás */
+.hero {
+  position: relative;   /* se já tiver, ok; se não, define */
+  z-index: 1;           /* fique atrás do header/menu */
+}

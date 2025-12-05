@@ -1,0 +1,197 @@
+/* ============================
+   GLOBAL
+============================ */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Botões gerais */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 15px;
+  background: #ff2c2c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #cc2222;
+}
+
+/* ============================
+   HEADER
+============================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 32px;
+  user-select: none;
+}
+
+/* ============================
+   HERO
+============================ */
+.hero {
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .hero-text h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+/* ============================
+   PLANOS
+============================ */
+.planos {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.plano {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+  max-width: 900px;
+}
+
+.plano.reverse {
+  flex-direction: row-reverse;
+}
+
+.plano-img {
+  width: 320px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.price {
+  font-size: 26px;
+  color: #ff2c2c;
+  font-weight: 900;
+}
+
+/* ============================
+   PÁGINAS (Sobre, Contato, Teste)
+============================ */
+section {
+  padding: 60px 25px;
+  text-align: center;
+}
+
+.sobre-img,
+.contato-img {
+  width: 260px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.footer {
+  background: #111;
+  padding: 25px;
+  text-align: center;
+  color: #ccc;
+}
+
+.footer-social {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff2c2c;
+}
+
+/* ============================
+   RESPONSIVO
+============================ */
+
+@media (max-width: 840px) {
+  .plano {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    background: #121212;
+    width: 180px;
+    padding: 20px;
+    text-align: right;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
