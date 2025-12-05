@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-
+import'./Footer.css';
 export default function Footer() {
 return (
 <footer className="footer">
