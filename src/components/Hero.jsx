@@ -19,6 +19,8 @@ export default function Hero() {
     <section
       className="hero"
       style={{
+        height: "900px",
+        innerHeight: "auto",
         backgroundImage: `url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",

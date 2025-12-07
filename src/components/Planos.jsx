@@ -9,25 +9,25 @@ export default function Planos() {
       <PlanoCard
         reverse={false}
         price="R$ 29,90"
-        title="Plano Mensal"
+        title="Plano Básico"
         desc="Acesso total + qualidade 4K + atualizações constantes"
-        img="plano1.jpg"
+        img="planobasico.png"
       />
 
       <PlanoCard
         reverse={true}
         price="R$ 79,90"
-        title="Plano Trimestral"
+        title="Plano Intermediário"
         desc="Economize e receba suporte premium prioritário"
-        img="plano2.jpg"
+        img="planointermediario.png"
       />
 
       <PlanoCard
         reverse={false}
         price="R$ 199,90"
-        title="Plano Anual"
+        title="Plano Premium"
         desc="Melhor custo-benefício com estabilidade máxima"
-        img="plano3.jpg"
+        img="planopremium.png"
       />
     </section>
   );

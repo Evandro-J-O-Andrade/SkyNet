@@ -13,12 +13,13 @@ function getImage(fileName) {
 
 export default function Novidades() {
   // Imagem de fundo da seção Novidades
-  const bg = getImage("combo.webp");
+  const bg = getImage("LogoSkynet.png");
 
   return (
     <section
       className="novidades"
       style={{
+        
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",

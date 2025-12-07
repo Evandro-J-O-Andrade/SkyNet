@@ -8,14 +8,23 @@ function getImage(fileName) {
 }
 
 export default function TesteGratis() {
-  const bg = getImage("combo2.jpg"); // imagem de fundo da seção
+  const bg = getImage("teste2.png"); // imagem de fundo da seção
 
   return (
     <section
       id="teste"
       className="teste"
-      style={{ backgroundImage: `url(${bg})` }}
+      
+      style={{ 
+        height: "550px",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        
+        backgroundImage: `url(${bg})` }}
     >
+      <br />
+      
       <h2>Teste Grátis</h2>
       <p>Peça 30 minutos grátis agora mesmo.</p>
       <a
@@ -24,6 +33,7 @@ export default function TesteGratis() {
       >
         Pedir Teste Grátis
       </a>
-    </section>
+     
+    </section>  
   );
 }
