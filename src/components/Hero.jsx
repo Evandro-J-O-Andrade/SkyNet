@@ -20,7 +20,6 @@ export default function Hero() {
       className="hero"
       style={{
         height: "900px",
-        innerHeight: "auto",
         backgroundImage: `url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -28,12 +27,13 @@ export default function Hero() {
       }}
     >
       <div className="hero-text">
+        <br />
         <h1>Streaming Premium IPTV Skynet</h1>
         <p>Mais de 10.000 canais, filmes, séries e esportes.</p>
 
         <a
           className="btn"
-          href="https://wa.me/5599999999999?text=Quero+assinar+Skynet"
+          href="https://wa.me/5511987063917?text=Quero+assinar+Skynet"
         >
           Assinar Agora
         </a>

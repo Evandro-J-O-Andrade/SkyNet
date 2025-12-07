@@ -8,7 +8,7 @@ function getImage(fileName) {
 }
 
 export default function Contato() {
-  const contatoImg = getImage("contato.jpg"); // imagem opcional para ilustrar a seção
+  const contatoImg = getImage("logosemfundo.png"); // imagem opcional para ilustrar a seção
 
   return (
     <section id="contato" className="contato">

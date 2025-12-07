@@ -1,0 +1,91 @@
+.planos {
+  position: relative;
+  width: 100%;
+  padding: 80px 40px;
+  overflow: hidden;
+  
+}
+
+/* vídeo de fundo */
+.planos-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* camada escura por cima */
+.planos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.95)
+  );
+  z-index: -1;
+}
+
+/* CONTAINER DOS CARDS – estilo Netflix */
+.planos-container {
+  width: 100%;
+  padding: 40px 5%; /* Espaço lateral maior, estilo Netflix */
+  display: flex;
+  justify-content:center;
+}
+
+.planos-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* força espalhar */
+  gap: 40px; /* distância entre os cards */
+}
+
+.planos-content h2 {
+  color: #d6d4d4;
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+}
+/*==================================*/
+
+
+
+/* CONTAINER GERAL DOS PLANOS */
+/*.planos {
+  width: 100%;
+  padding: 120px 60px;   /* <-- aqui você aumenta ou diminui a distância lateral 
+  position: relative;
+  overflow: hidden;
+}
+
+/* VÍDEO OU IMAGEM DE FUNDO 
+.planos-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.25; /* ajuste para ficar mais ou menos visível 
+  pointer-events: none;
+}
+
+.planos-content {
+  position: relative;
+  z-index: 2;
+}
+
+.titulo {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 80px;
+}
+/*==================================*/

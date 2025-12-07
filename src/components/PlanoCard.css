@@ -1,0 +1,115 @@
+/* CONTAINER GERAL DOS PLANOS */
+.planos-container {
+  width: 100%;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  background: linear-gradient(to bottom, #050505, #0f0f0f);
+}
+
+/* CADA PLANO */
+.plano {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  /* ajuste recomendado */
+  width: 100%;
+  max-width: 1700px; /* ou 1600px, se quiser ainda mais aberto */
+  padding: 40 20px;
+  margin: 0 auto;
+}
+.planos-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* força espalhar */
+  gap: 40px; /* distância entre os cards */
+}
+
+
+/* INTERCALAMENTO AUTOMÁTICO: 1 esquerda, 2 direita, 3 esquerda… */
+.plano:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* IMAGEM DO PLANO */
+.plano-img {
+  width: 400px;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 44, 44, 0.25);
+  border: 2px solid #ff2c2c20;
+}
+
+/* TEXTO */
+.desc {
+  flex: 1;
+  color: #fff;
+}
+
+.desc h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ff2c2c;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #ff2c2c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #cc1f1f;
+}
+
+/* RESPONSIVO */
+@media (max-width: 830px) {
+  .plano {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .plano:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .plano-img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .btn {
+  display: inline-block;
+  margin: auto;
+  padding: 12px 22px;
+  background: #ff2c2c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  
+   }
+   
+}
+
+
+

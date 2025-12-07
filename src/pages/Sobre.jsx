@@ -8,7 +8,7 @@ function getImage(fileName) {
 }
 
 export default function Sobre() {
-  const sobreImg = getImage("sobre.jpg"); // imagem opcional da seção Sobre
+  const sobreImg = getImage("bannerplano.png"); // imagem opcional da seção Sobre
 
   return (
     <section id="sobre" className="sobre">

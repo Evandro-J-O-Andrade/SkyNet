@@ -19,13 +19,15 @@ export default function Novidades() {
     <section
       className="novidades"
       style={{
-        
+        height: "300px",
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-    >
+    > 
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <style></style>
       <h2>Novidades</h2>
       <p>Atualizações semanais e novos canais adicionados.</p>
     </section>
