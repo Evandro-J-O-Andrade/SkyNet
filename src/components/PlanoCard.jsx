@@ -38,7 +38,7 @@ export default function PlanoCard({ index, title, desc, price, img }) {
         <p>{desc}</p>
 
         <a
-          href="https://wa.me/5599999999999?text=Quero+assinar+Skynet"
+          href="https://wa.me/5511987063917?text=Quero+assinar+Skynet"
           className="btn"
         >
           Assinar

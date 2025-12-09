@@ -1,187 +1,175 @@
-.faq-container {
-  width: 100%;
-  padding: 60px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #fff;
-}
-
-.faq-titulo {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* Lista */
-.faq-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Cada item */
-.faq-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  user-select: none;
-}
-
-.faq-item:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.faq-pergunta {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-/* Resposta escondida */
-.faq-resposta {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-/* Quando ativo */
-.faq-item.ativo .faq-resposta {
-  max-height: 300px;
-  opacity: 1;
-  pointer-events: auto;
-  margin-top: 10px;
-}
-
-/* Texto da resposta */
-.faq-resposta p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .faq-pergunta {
-    font-size: 1.1rem;
-  }
-
-  .faq-container {
-    padding: 40px 4%;
-  }
-}
-.faq-section {
-  width: 100%;
-  padding: 80px 40px;
-  background: #000;
-  color: #fff;
-}
-
-.faq-section h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 50px;
-  color: #e6e6e6;
-}
-
-.faq-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.faq-item {
-  background: #111;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #222;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  background: #111;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-question:hover {
-  background: #181818;
-}
-
-.icon {
-  font-size: 28px;
-  transition: transform 0.5s ease;
-}
-
-.icon.open {
-  transform: rotate(50deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  background: #6b0f0f;
-  transition: max-height 0.4s ease;
-}
-
-.faq-answer.show {
-  max-height: 200px;
-  padding: 0 20px 20px;
-}
-
-.faq-answer p {
-  font-size: 18px;
-  color: #d4d4d4;
-  line-height: 1.6;
-}
-.faq-section {
-  width: 100%;
-  padding: 80px 40px;
-  background: linear-gradient(180deg, #080808, #121212, #0a0a0a);
-}
-
-.faq-container {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 14px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
+/* ========================================
+   FUNDO + OVERLAY
+======================================== */
 .faq-section {
   position: relative;
   padding: 90px 40px;
   background: url("/src/img/combo2.jpg") center/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
 }
 
 .faq-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.78);
+  background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(3px);
+  z-index: 0;
 }
 
+/* ========================================
+   TÍTULO COM EFEITO DE BRILHO
+======================================== */
+.faq-section h2 {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 50px;
+  color: #f4f4f4;
+  z-index: 2;
 
+  text-shadow: 0 0 10px #ff2c2c80, 0 0 20px #ff2c2c40;
+  animation: glow 2.5s infinite ease-in-out;
+}
 
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 8px #ff2c2c40, 0 0 14px #ff2c2c20;
+  }
+  50% {
+    text-shadow: 0 0 14px #ff2c2c80, 0 0 30px #ff2c2c60;
+  }
+  100% {
+    text-shadow: 0 0 8px #ff2c2c40, 0 0 14px #ff2c2c20;
+  }
+}
+
+/* ========================================
+   CONTAINER COM BLUR
+======================================== */
 .faq-container {
-  
-  border-radius: 18px;
-  
+  position: relative;
+  z-index: 5;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+
   border: 1px solid #ff2c2c40;
-  box-shadow: 0 0 20px rgba(255, 44, 44, 0.25);
+  box-shadow: 0 0 25px rgba(255, 44, 44, 0.2),
+              0 0 50px rgba(255, 44, 44, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   ITEM — BORDA NEON PULSANTE
+======================================== */
+.faq-item {
+  background: #0c0c0c;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ff2c2c40;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq-item:hover {
+  box-shadow: 0 0 20px rgba(255, 44, 44, 0.4),
+              0 0 40px rgba(255, 44, 44, 0.2);
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   PERGUNTA + NUMERAÇÃO + ÍCONE
+======================================== */
+.faq-question {
+  width: 100%;
+  padding: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background: #101010;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: 0.3s;
+}
+
+.icon {
+  font-size: 30px;
+  font-weight: 900;
+  transition: transform 0.35s ease;
+}
+
+.icon.open {
+  transform: rotate(180deg);
+}
+
+/* Numeração automática */
+.faq-question span.number {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ff2c2c;
+}
+
+/* Texto da pergunta (flex ocupa o resto) */
+.faq-question span.text {
+  flex: 1;
+}
+
+/* ========================================
+   RESPOSTA — ABERTURA SUAVE
+======================================== */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #170000;
+  transition: max-height 0.45s ease, padding 0.3s ease;
+  border-top: 1px solid #ff2c2c40;
+}
+
+.faq-answer.show {
+  max-height: 260px;
+  padding: 20px 24px 24px;
+}
+
+.faq-answer p {
+  font-size: 18px;
+  color: #d6d6d6;
+  line-height: 1.6;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 26px;
+  }
 }

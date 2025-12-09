@@ -44,17 +44,14 @@ export default function Faq() {
         {faqData.map((item, index) => (
           <div key={index} className="faq-item">
             <button className="faq-question" onClick={() => toggle(index)}>
-              <span>{item.question}</span>
+              <span className="number">{index + 1}.</span>
+              <span className="text">{item.question}</span>
               <span className={`icon ${openIndex === index ? "open" : ""}`}>
-                +
+                {openIndex === index ? "−" : "+"}
               </span>
             </button>
 
-            <div
-              className={`faq-answer ${
-                openIndex === index ? "show" : ""
-              }`}
-            >
+            <div className={`faq-answer ${openIndex === index ? "show" : ""}`}>
               <p>{item.answer}</p>
             </div>
           </div>

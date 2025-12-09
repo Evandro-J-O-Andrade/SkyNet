@@ -26,7 +26,7 @@ export default function Contato() {
 
         <a 
           className="btn"
-          href="https://wa.me/5599999999999?text=Olá,+gostaria+de+falar+com+a+Skynet+Streaming"
+          href="https://wa.me/5511987063917?text=Olá,+gostaria+de+falar+com+a+Skynet+Streaming"
           target="_blank"
           rel="noopener noreferrer"
         >

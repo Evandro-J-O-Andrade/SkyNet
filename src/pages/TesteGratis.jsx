@@ -29,7 +29,7 @@ export default function TesteGratis() {
       <p>Peça 30 minutos grátis agora mesmo.</p>
       <a
         className="btn"
-        href="https://go.aftvnews.com/skynet"
+        href="https://go.aftvnews.com/1204843"
       >
         Pedir Teste Grátis
       </a>
