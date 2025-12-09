@@ -1,3 +1,10 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+
 /* ============================================================
    RESET MODERNO
    (Baseado em Josh Comeau + melhorias de produção)
