@@ -1,0 +1,81 @@
+/* =============================
+   SEÇÃO SOBRE
+============================= */
+
+.sobre {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #0a0a0a; /* fundo similar às demais seções */
+}
+
+.sobre-content {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.sobre-img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 18px;
+  box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.2); /* brilho dourado sutil */
+}
+
+.sobre-text {
+  width: 55%;
+  color: var(--text);
+}
+
+.sobre-text h2 {
+  font-size: 2.3rem;
+  color: var(--gold); /* mantém o padrão do site */
+  margin-bottom: 15px;
+}
+
+.sobre-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+
+@media (max-width: 900px) {
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-img {
+    width: 80%;
+  }
+
+  .sobre-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre {
+    padding: 40px 0;
+  }
+
+  .sobre-text h2 {
+    font-size: 1.9rem;
+  }
+
+  .sobre-text p {
+    font-size: 1rem;
+  }
+
+  .sobre-img {
+    width: 100%;
+  }
+}

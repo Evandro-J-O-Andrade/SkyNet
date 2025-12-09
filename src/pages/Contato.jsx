@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Contato.css";
 
 const images = import.meta.glob("/src/img/*", { eager: true });
 
@@ -8,30 +9,108 @@ function getImage(fileName) {
 }
 
 export default function Contato() {
-  const contatoImg = getImage("logosemfundo.png"); // imagem opcional para ilustrar a seção
+  const contatoImg = getImage("logosemfundo.png");
+
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const data = new FormData(form);
+
+    // Detectar se estamos no Netlify
+    const isNetlify = window.location.hostname.includes("netlify.app");
+
+    // Ambiente local → força erro
+    if (!isNetlify) {
+      setStatus("error");
+      setTimeout(() => setStatus(""), 5000);
+      return;
+    }
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus(""), 5000); // Remove mensagem
+      })
+      .catch(() => {
+        setStatus("error");
+        setTimeout(() => setStatus(""), 5000); // Remove mensagem
+      });
+  };
 
   return (
     <section id="contato" className="contato">
-      <div className="contato-content">
+      <div className="contato-container">
 
-        <img 
-          src={contatoImg} 
-          alt="Contato Skynet" 
-          className="contato-img"
-        />
+        {/* COLUNA ESQUERDA */}
+        <div className="contato-left">
+          <img src={contatoImg} alt="Contato Skynet" className="contato-img" />
 
-        <h2>Contato</h2>
+          <h2>Fale Conosco</h2>
 
-        <p>Fale conosco diretamente pelo WhatsApp para suporte ou assinatura.</p>
+          <p>Entre em contato pelo WhatsApp ou envie uma mensagem pelo formulário.</p>
 
-        <a 
-          className="btn"
-          href="https://wa.me/5511987063917?text=Olá,+gostaria+de+falar+com+a+Skynet+Streaming"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Abrir WhatsApp
-        </a>
+          <a
+            className="btn"
+            href="https://wa.me/5511987063917?text=Olá,+gostaria+de+falar+com+a+Skynet+Streaming"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir WhatsApp
+          </a>
+        </div>
+
+        {/* COLUNA DIREITA */}
+        <div className="contato-right">
+          <h3>Envie uma mensagem</h3>
+
+          <form
+            className="contato-form"
+            name="contato"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contato" />
+            <p className="hidden">
+              <label>
+                Não preencher:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <input type="text" name="nome" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="Seu e-mail" required />
+            <input type="text" name="telefone" placeholder="Telefone (opcional)" />
+
+            <select name="plano">
+              <option value="">Selecione um plano (opcional)</option>
+              <option value="Quero um Plano">Quero um Plano</option>
+              <option value="Plano Mensal">Plano Mensal</option>
+              <option value="Plano Trimestral">Plano Trimestral</option>
+              <option value="Plano Anual">Plano Anual</option>
+              <option value="Outros">Outros</option>
+            </select>
+
+            <textarea name="mensagem" placeholder="Sua mensagem" rows="4" required></textarea>
+
+            <button type="submit" className="btn form-btn">Enviar</button>
+
+            {status === "success" && (
+              <p className="msg success">Mensagem enviada com sucesso.</p>
+            )}
+            {status === "error" && (
+              <p className="msg error">Erro ao enviar. Tente novamente.</p>
+            )}
+          </form>
+        </div>
 
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Sobre.css";
 const images = import.meta.glob("/src/img/*", { eager: true });
 
 function getImage(fileName) {
