@@ -388,25 +388,25 @@
   position: absolute;
   /* Movido para a extrema ponta inferior */
   left: 8px; 
-  bottom: 25px; 
+  bottom: 40px; 
   
   /* **Aumento do Tamanho do Rank** */
-  font-size: 115px; 
+  font-size: 120px; 
   font-weight: 900;
   line-height: 80px; /* Garante que o número não seja cortado */
-  left: -15px;
+  left: -18px;
   /* ... (cores e text-shadow mantidos) ... */
   z-index: 20; 
 }
 
 /* 2. ESTILO DO TÍTULO (REMOVIDA A MARGEM SUPERIOR PARA ENCOSTAR NA IMAGEM) */
 .card-title {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 700;
     color: #fff;
-    margin-top: 150px; /* Espaço mínimo entre a imagem e o título */
-    text-align: left;
-    padding: 0 5px;
+    margin-top: 155px; /* Espaço mínimo entre a imagem e o título */
+    text-align:center;
+    padding: 150px 5px;
 }
 
 /* --- 3. AJUSTE DO NAV (ALTURA E CENTRALIZAÇÃO) --- */
@@ -512,7 +512,32 @@
 @media (max-width: 420px) {
   .top10-card {
     min-width: 96%; /* 1 card */
+
   }
+  /* 1. ESTILO DO RANK (MAIOR E MAIS BAIXO) */
+.rank-number {
+  position: absolute;
+  /* Movido para a extrema ponta inferior */
+  left: 8px; 
+  bottom: 30px; 
+  
+  /* **Aumento do Tamanho do Rank** */
+  font-size: 100px; 
+  font-weight: 900;
+  line-height: 80px; /* Garante que o número não seja cortado */
+  left: -15px;
+  /* ... (cores e text-shadow mantidos) ... */
+  z-index: 20; 
+}
+/* 2. ESTILO DO TÍTULO (REMOVIDA A MARGEM SUPERIOR PARA ENCOSTAR NA IMAGEM) */
+.card-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 155px; /* Espaço mínimo entre a imagem e o título */
+    text-align:center;
+    padding: 24px 5px;
+}
 }
 .top10-card {
   flex: 0 0 auto; /* impede quebrar linha */
